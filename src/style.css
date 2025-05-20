@@ -19,13 +19,13 @@ html {
   font-style: normal;
   font-weight: 200 700;
   font-display: swap;
-  src: url('/fonts/Pokemon_Hollow.ttf') format('woff');
+  src: url('/fonts/Pokemon_Hollow.ttf') format('truetype');
 }
 
 @font-face {
   font-family: Pokemon_Solid;
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 400;
   font-display: swap;
-  src: url('/fonts/Pokemon_Solid.ttf') format('woff');
+  src: url('/fonts/Pokemon_Solid.ttf') format('truetype');
 }
