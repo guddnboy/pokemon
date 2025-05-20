@@ -2,9 +2,9 @@ import instance from './axios';
 
 const BASE_URL = 'https://pokeapi.co/api/v2/';
 
-export const getAllPokemons = async () => {
+export const getPokemonDetails = async (id: number) => {
   try {
-    const response = await instance.get(`${BASE_URL}/pokemon/`);
+    const response = await instance.get(`${BASE_URL}/pokemon/${id}`);
     return response.data;
   } catch (error) {
     // [TODO] 에러 핸들링 작업 필요
