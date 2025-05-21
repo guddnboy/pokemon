@@ -4,7 +4,6 @@ type Pokemon = {
   height: number;
   weight: number;
   abilities: { ability: { name: string } }[];
-  moves: { name: string };
   sprites: {
     front_default: string;
   };
@@ -27,7 +26,6 @@ type PokemonDefaultDetails = {
   abilities: string[];
   height: number;
   weight: number;
-  moves: string[];
   sprites: string;
   types: string[];
 };

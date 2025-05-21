@@ -20,24 +20,24 @@ const getKoreanPokemonData = async (
   id: number
 ): Promise<PokemonKoreanDetails> => {
   try {
-    const response = await instance.get(`${BASE_URL}/pokemon-species/${id}`);
+    const response = await instance.get(`${BASE_URL}pokemon-species/${id}`);
     const koreanGenus: { genus: string } = response.data.genera.find(
       (genus: { language: { name: string } }) => genus.language.name === 'ko'
     );
     const color: string = response.data.color.name;
     const colorMap: { [key: string]: string } = {
-      red: 'bg-red-500',
-      blue: 'bg-blue-500',
-      green: 'bg-green-500',
-      yellow: 'bg-yellow-500',
-      purple: 'bg-purple-500',
-      pink: 'bg-pink-500',
-      brown: 'bg-brown-500',
-      gray: 'bg-gray-500',
-      white: 'bg-white-500',
-      black: 'bg-black-500',
+      red: 'red-500',
+      blue: 'blue-500',
+      green: 'green-500',
+      yellow: 'yellow-500',
+      purple: 'purple-500',
+      pink: 'pink-500',
+      brown: 'brown-500',
+      gray: 'gray-500',
+      white: 'white-500',
+      black: 'black-500',
     };
-    const colorClass = colorMap[color] || 'bg-gray-400';
+    const colorClass = colorMap[color] || 'gray-500';
     const koreanName: { name: string } = response.data.names.find(
       (name: { language: { name: string } }) => name.language.name === 'ko'
     );
@@ -69,15 +69,12 @@ const getDefaultPokemonDetails = async (
   id: number
 ): Promise<PokemonDefaultDetails> => {
   try {
-    const response = await instance.get(`${BASE_URL}/pokemon/${id}`);
+    const response = await instance.get(`${BASE_URL}pokemon/${id}`);
     const abilities = response.data.abilities.map(
       (ability: { ability: { name: string } }) => ability.ability.name
     );
     const height = response.data.height;
     const weight = response.data.weight;
-    const moves = response.data.moves.map(
-      (move: { move: { name: string } }) => move.move.name
-    );
     const sprites = response.data.sprites.front_default;
     const types = response.data.types.map(
       (type: { type: { name: string } }) => type.type.name
@@ -91,7 +88,6 @@ const getDefaultPokemonDetails = async (
       abilities,
       height,
       weight,
-      moves,
       sprites,
       types,
     };
