@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getPokemonDetails } from '../api/api';
+import { AbilitiesTag } from './tags/AbilitiesTag';
+import { TypeTag } from './tags/TypeTag';
 
 interface PokemonCardProps {
   id: number;
@@ -7,6 +9,7 @@ interface PokemonCardProps {
 
 interface Pokemon {
   name: string;
+  abilities: { ability: { name: string } }[];
   id: number;
   height: number;
   weight: number;
@@ -14,11 +17,11 @@ interface Pokemon {
 }
 export const PokemonCard = ({ id }: PokemonCardProps) => {
   const [pokemon, setPokemon] = useState<Pokemon>();
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getPokemonDetails(id);
       setPokemon(data);
-      console.log(data);
     };
     fetchData();
   }, [id]);
@@ -28,6 +31,18 @@ export const PokemonCard = ({ id }: PokemonCardProps) => {
       <div>id : {pokemon?.id}</div>
       <div>height : {pokemon?.height}</div>
       <div>weight : {pokemon?.weight}</div>
+      <div className="flex">
+        Abilities :
+        {pokemon?.abilities.map((ability, index) => (
+          <AbilitiesTag key={index} abilitiesName={ability.ability.name} />
+        ))}
+      </div>
+      <div className="flex">
+        Types :
+        {pokemon?.types.map((type, index) => (
+          <TypeTag key={index} typeName={type.type.name} />
+        ))}
+      </div>
     </div>
   );
 };
