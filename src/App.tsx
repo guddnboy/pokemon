@@ -3,7 +3,7 @@ import { Pokedex } from './components/Pokedex';
 const App = () => {
   return (
     <>
-      <header className="bg-primary-dark-blue py-6 flex justify-center items-center shadow-md">
+      <header className="font-pokemon-hollow bg-primary-dark-blue py-6 flex justify-center items-center shadow-md">
         <h1 className="text-primary-bright-yellow text-4xl font-bold tracking-widest">
           POKEDEX
         </h1>

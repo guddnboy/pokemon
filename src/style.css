@@ -1,11 +1,12 @@
 @import 'tailwindcss';
 
 html {
-  font-family: 'Pokemon_Hollow';
+  font-family: 'Gothic A1', sans-serif;
 }
 
 @theme {
   --font-pokemon-solid: 'Pokemon_Solid';
+  --font-pokemon-hollow: 'Pokemon_Hollow';
   --color-primary-bright-red: #ff0000;
   --color-primary-dark-red: #cc0000;
   --color-primary-bright-blue: #2a75bb;
