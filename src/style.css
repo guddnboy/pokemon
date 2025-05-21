@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 html {
-  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Galmuri11', sans-serif;
 }
 
 @theme {
@@ -29,4 +29,12 @@ html {
   font-weight: 400;
   font-display: swap;
   src: url('/fonts/Pokemon_Solid.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Galmuri11;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Galmuri11.ttf') format('truetype');
 }
