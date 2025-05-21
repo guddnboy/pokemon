@@ -23,14 +23,15 @@ export const PokemonCard = ({ id }: PokemonCardProps) => {
     };
     fetchData();
   }, [id]);
+
   return (
     <div
-      className={`size-60 m-4 p-4 rounded-md shadow-lg bg-${pokemon?.colorClass} border-2 border-gray-300`}
+      className={`size-60 m-4 p-4 rounded-md shadow-lg ${pokemon?.colorClass} border-2 border-gray-300`}
     >
       <div className="flex justify-between mb-2">
         <TypeTag typeName={pokemon?.genus} />
         <div
-          className={`size-6 flex justify-center items-center bg-gray-200 text-${pokemon?.color} border-gray-300 rounded-md shadow-md text-xs font-bold`}
+          className={`size-6 flex justify-center items-center bg-gray-200 border-gray-300 rounded-md shadow-md text-xs font-bold`}
         >
           {pokemon?.order}
         </div>

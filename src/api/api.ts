@@ -26,18 +26,18 @@ const getKoreanPokemonData = async (
     );
     const color: string = response.data.color.name;
     const colorMap: { [key: string]: string } = {
-      red: 'red-500',
-      blue: 'blue-500',
-      green: 'green-500',
-      yellow: 'yellow-500',
-      purple: 'purple-500',
-      pink: 'pink-500',
-      brown: 'brown-500',
-      gray: 'gray-500',
-      white: 'white-500',
-      black: 'black-500',
+      red: 'bg-red-500',
+      blue: 'bg-blue-500',
+      green: 'bg-green-500',
+      yellow: 'bg-yellow-500',
+      purple: 'bg-purple-500',
+      pink: 'bg-pink-500',
+      brown: 'bg-brown-500',
+      gray: 'bg-gray-500',
+      white: 'bg-white-500',
+      black: 'bg-black-500',
     };
-    const colorClass = colorMap[color] || 'gray-500';
+    const colorClass = colorMap[color] || 'bg-gray-500';
     const koreanName: { name: string } = response.data.names.find(
       (name: { language: { name: string } }) => name.language.name === 'ko'
     );
