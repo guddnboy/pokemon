@@ -43,9 +43,7 @@ export const PokemonCard = ({ id }: PokemonCardProps) => {
             />
           </div>
 
-          <div
-            className={`flex justify-center text-${pokemon.color} font-bold text-lg`}
-          >
+          <div className={`flex justify-center font-bold text-lg`}>
             <div className="font-bold text-md">{pokemon.name}</div>
           </div>
           <div className="mt-2">
