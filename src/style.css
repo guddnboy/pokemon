@@ -1,1 +1,40 @@
 @import 'tailwindcss';
+
+html {
+  font-family: 'Galmuri11', sans-serif;
+}
+
+@theme {
+  --font-pokemon-solid: 'Pokemon_Solid';
+  --font-pokemon-hollow: 'Pokemon_Hollow';
+  --color-primary-bright-red: #ff0000;
+  --color-primary-dark-red: #cc0000;
+  --color-primary-bright-blue: #2a75bb;
+  --color-primary-dark-blue: #3c5aa6;
+  --color-primary-bright-yellow: #ffde00;
+  --color-primary-dark-yellow: #c7a008;
+}
+
+@font-face {
+  font-family: Pokemon_Hollow;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url('/fonts/Pokemon_Hollow.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Pokemon_Solid;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Pokemon_Solid.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: Galmuri11;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Galmuri11.ttf') format('truetype');
+}
