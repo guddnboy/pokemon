@@ -1,7 +1,5 @@
 import instance from './axios';
 
-const BASE_URL = 'https://pokeapi.co/api/v2/';
-
 export const getPokemonDetails = async (id: number) => {
   try {
     const [defaultPokemon, koreanPokemon] = await Promise.all([
@@ -22,7 +20,7 @@ const getKoreanPokemonData = async (
   id: number
 ): Promise<PokemonKoreanDetails> => {
   try {
-    const response = await instance.get(`${BASE_URL}pokemon-species/${id}`);
+    const response = await instance.get(`pokemon-species/${id}`);
     const koreanGenus: { genus: string } = response.data.genera.find(
       (genus: { language: { name: string } }) => genus.language.name === 'ko'
     );
@@ -71,7 +69,7 @@ const getDefaultPokemonDetails = async (
   id: number
 ): Promise<PokemonDefaultDetails> => {
   try {
-    const response = await instance.get(`${BASE_URL}pokemon/${id}`);
+    const response = await instance.get(`pokemon/${id}`);
     const abilities = response.data.abilities.map(
       (ability: { ability: { name: string } }) => ability.ability.name
     );
