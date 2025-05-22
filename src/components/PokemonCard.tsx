@@ -14,9 +14,6 @@ export const PokemonCard = ({ id }: PokemonCardProps) => {
       if (data) {
         setPokemon({
           ...data,
-          abilities: data.abilities.map((name: string) => ({
-            ability: { name },
-          })),
           sprites: { front_default: data.sprites },
         });
       }
