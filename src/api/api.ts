@@ -4,8 +4,10 @@ const BASE_URL = 'https://pokeapi.co/api/v2/';
 
 export const getPokemonDetails = async (id: number) => {
   try {
-    const defaultPokemon = await getDefaultPokemonDetails(id);
-    const koreanPokemon = await getKoreanPokemonData(id);
+    const [defaultPokemon, koreanPokemon] = await Promise.all([
+      getDefaultPokemonDetails(id),
+      getKoreanPokemonData(id),
+    ]);
     return {
       ...defaultPokemon,
       ...koreanPokemon,
