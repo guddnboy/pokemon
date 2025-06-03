@@ -1,12 +1,18 @@
 import { useEffect, useState } from 'react';
 import { getPokemonDetails } from '../api/api';
 import { GenusTag } from './tags/GenusTag';
+import { DetailModal } from './DetailModal';
 interface PokemonCardProps {
   id: number;
 }
 
 export const PokemonCard = ({ id }: PokemonCardProps) => {
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,11 +54,18 @@ export const PokemonCard = ({ id }: PokemonCardProps) => {
           </div>
           <div className="mt-2">
             <details className="group">
-              <summary className="cursor-pointer text-primary-dark-blue hover:text-primary-dark-yellow transition-colors">
+              <summary
+                className="cursor-pointer text-primary-dark-blue hover:text-primary-dark-yellow transition-colors"
+                onClick={() => setIsModalOpen(true)}
+              >
                 포켓몬 설명 더보기
               </summary>
               <div className="mt-2 text-sm text-gray-700">
-                {pokemon.flavorText}
+                <DetailModal
+                  detail={pokemon.flavorText}
+                  isModalOpen={isModalOpen}
+                  toggleModal={toggleModal}
+                />
               </div>
             </details>
           </div>
