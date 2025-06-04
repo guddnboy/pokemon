@@ -37,7 +37,6 @@ export const DetailModal = ({
       >
         ×
       </button>
-      <div></div>
       <div className="mt-10 text-sm text-gray-700 relative z-0">{detail}</div>
     </ReactModal>
   );
